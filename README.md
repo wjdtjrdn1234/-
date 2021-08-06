@@ -65,12 +65,16 @@ print('\n' .join(result))
 #### 번외
 
 n = int(input())
+
 stack = []
+
 result = []
+
 count=1
 
 
 for i in range(0,n):
+
     data = int(input())
     while count<=data:
         print("+")
@@ -132,18 +136,24 @@ N장의 카드에 써져 있는 숫자가 주어졌을 때, M을 넘지 않으�
 ## SOLUTION
 
 n,m = list(map(int,input().split(" ")))
+
 b = list(map(int,input().split(" ")))
 
 c = 0
+
 length = len(b)
 
 
 
 
 for i in range(0,length):
+
     for j in range(i+1, length):
+    
         for k in range(j + 1, length):
+        
             if b[i]+b[j]+b[k] <=m:
+            
                 c = max(c,b[i]+b[j]+b[k])
 
 
@@ -197,43 +207,65 @@ print(c)
 a = list(map(int,input().split(" ")))
 
 ascending = True
+
 deseding = True
 
 for i in range(0,7):
+
     if a[i]>a[i+1]:
+    
         ascending = False
+        
     elif a[i]<a[i+1]:
+    
         deseding = False
 
 
 if ascending:
+
     print('ascending')
+    
 elif deseding:
+
     print('deseding')
+    
 else:
+
     print('mix')
     
 2
 
 a = list(map(int,input().split(" ")))
+
 b = 0
+
 c = 0
 
 ascending = True
+
 deseding = True
 
 for i in range(0,7):
+
     if a[i]>a[i+1]:
+    
         b = b+1
+        
     elif a[i]<a[i+1]:
+    
         c = c+1
 
 
 if b==7:
+
     print('descending')
+    
 elif c==7:
+
     print('ascending')
+    
 else:
+
     print('mixed')
     
     
