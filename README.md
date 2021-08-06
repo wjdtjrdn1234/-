@@ -26,12 +26,14 @@ n = int(input())
 
 
 stack = []
+
 result = []
 
 count = 1
 
 
 for i in range(0,n):
+
     a = int(input())                     
     while count <= a:                      
         stack.append(count)
