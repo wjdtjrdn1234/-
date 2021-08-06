@@ -59,6 +59,35 @@ print('\n' .join(result))
 
 
 
+
+#### 번외
+
+n = int(input())
+stack = []
+result = []
+count=1
+
+
+for i in range(0,n):
+    data = int(input())
+    while count<=data:
+        print("+")
+        stack.append(count)
+        count+=1
+
+
+    if stack[-1]==data:
+        print("-")
+        stack.pop()
+
+
+    else:
+        print("NO")
+        exit(0)
+        
+
+이렇게 짤경우는 시간초과로 오답처리 되었다
+
 * * *
 
 ***
