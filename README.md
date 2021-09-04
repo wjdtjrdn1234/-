@@ -1,4 +1,84 @@
 # 코딩테스트 백문 알고리즘 문제 풀기
+
+
+
+
+### 1697 숨바꼭질(DFS , BFS 문제) https://www.acmicpc.net/problem/1697
+
+
+#### 문제
+수빈이는 동생과 숨바꼭질을 하고 있다. 수빈이는 현재 점 N(0 ≤ N ≤ 100,000)에 있고, 동생은 점 K(0 ≤ K ≤ 100,000)에 있다. 수빈이는 걷거나 순간이동을 할 수 있다. 만약, 수빈이의 위치가 X일 때 걷는다면 1초 후에 X-1 또는 X+1로 이동하게 된다. 순간이동을 하는 경우에는 1초 후에 2*X의 위치로 이동하게 된다.
+
+수빈이와 동생의 위치가 주어졌을 때, 수빈이가 동생을 찾을 수 있는 가장 빠른 시간이 몇 초 후인지 구하는 프로그램을 작성하시오.
+
+
+
+#### 입력 
+
+첫 번째 줄에 수빈이가 있는 위치 N과 동생이 있는 위치 K가 주어진다. N과 K는 정수이다.
+
+#### 출력 
+
+수빈이가 동생을 찾는 가장 빠른 시간을 출력한다.
+
+
+## SOLUTION
+
+from collections import deque
+
+MAX = 100001
+
+n,m =  map(int,input().split(" "))
+
+array = [0] * MAX
+
+def bfs():
+
+    q = deque([n])
+    
+    while q:
+    
+        v = q.popleft()
+        
+        if v==m:
+        
+            return array[v]
+            
+        for next_v in (v-1 , v+1 , v*2):
+        
+            if 0<= next_v < MAX and not array[next_v]:
+            
+                array[next_v] = array[v]+1
+                
+                q.append(next_v)
+
+
+
+print(bfs())
+
+
+
+
+-특정위치까지 이동하는 최단 시간 계산문제
+
+-이동시간이 모두1초이므로 BFS
+
+-새로운 정점 최단거리 = 이전까지 최단거리+1
+
+
+
+
+
+
+* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
 ### 1260번 DFS와 BFS(DFS , BFS 문제) https://www.acmicpc.net/problem/1260
 
 
